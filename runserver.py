@@ -71,8 +71,7 @@ if __name__ == '__main__':
     scanner = Scanner(scan_config)
     scanner.start()
 
-port = int(os.environ.get('PORT', 5000))
-
+    port = int(os.environ.get('PORT', 5000))
     app = Pogom(scan_config, __name__)
     config['ROOT_PATH'] = app.root_path
     app.run(threaded=True, debug=args.debug, host=args.host, port=port)
